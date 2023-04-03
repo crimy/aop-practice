@@ -7,16 +7,16 @@ import org.springframework.stereotype.Service;
 @Service
 public class HelloService {
     @FirstMethod
-    public void hello() {
+    public void first() {
 
     }
     @SecondMethod
-    public void hi() {
+    public void second() {
 
     }
     @FirstMethod
     @SecondMethod
-    public void bye() {
+    public void both() {
 
     }
 }
