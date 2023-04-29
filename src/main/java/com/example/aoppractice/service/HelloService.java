@@ -2,10 +2,18 @@ package com.example.aoppractice.service;
 
 import com.example.aoppractice.annotation.FirstMethod;
 import com.example.aoppractice.annotation.SecondMethod;
+import com.example.aoppractice.util.EncodeUtil;
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
+
+import static com.example.aoppractice.util.TimeUtil.getCurrentTime;
+
 @Service
+@AllArgsConstructor
 public class HelloService {
+    private final EncodeUtil encodeUtil;
     @FirstMethod
     public void first() {
 
@@ -17,6 +25,10 @@ public class HelloService {
     @FirstMethod
     @SecondMethod
     public void both() {
+    }
 
+    public LocalDateTime getTime() {
+
+        return getCurrentTime();
     }
 }
