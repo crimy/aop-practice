@@ -7,6 +7,7 @@ import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 import static com.example.aoppractice.util.TimeUtil.getCurrentTime;
 
@@ -28,7 +29,10 @@ public class HelloService {
     }
 
     public LocalDateTime getTime() {
-
         return getCurrentTime();
+    }
+    public String getEncodedTime() {
+        LocalDateTime time = getCurrentTime();
+        return encodeUtil.encode(time.format(DateTimeFormatter.ofPattern("yyMMd")));
     }
 }
